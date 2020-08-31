@@ -1,0 +1,783 @@
+  body {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  li, ul, p, div, body, html, table {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  li {
+    list-style: none;
+  }
+  #app {
+    color: #2c3e50;
+    height: 100%;
+    position: relative;
+  }
+ /* -------------------------------------------------全局滚动条样式------------------------------------------------- */
+  .ol-scale-line {
+    right: 10px !important;
+    left: auto !important;
+  }
+  /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/  
+  /* .panelBox ::-webkit-scrollbar  
+{  
+    width: 6px;    
+    background-color: transparent;  
+}   */
+/*定义滚动条轨道 内阴影+圆角*/  
+/* .panelBox ::-webkit-scrollbar-track  
+{  
+    box-shadow: transparent;
+    border-radius: 10px;  
+    background-color: #fff;  
+}   */
+
+/*定义滑块 内阴影+圆角*/  
+.panelBox ::-webkit-scrollbar-thumb  
+/* {  
+    border-radius: 10px;
+    box-shadow: transparent;
+    background-color: rgba(8, 36, 53, 0.8);  
+}   */
+/*定义最上方和最下方的按钮*/
+.panelBox ::-webkit-scrollbar-button{
+     background-color: transparent;
+     border:1px solid #ccc;
+}
+  /* -------------------------------------------------修改elment ui 表格的样式------------------------------------------------- */
+  .el-table {
+    background: transparent;
+    color: #FFF;
+    border:1px solid rgba(53,66,100,0.37);
+  }
+  .el-table .cell.el-tooltip{
+    font-size: 14px;
+  }
+  /* 表头修改 */
+  .el-table thead {
+    color:#FFF;
+  }
+  /* 修改行的背景色; */
+  .el-table thead th {
+    padding: 8px 0;
+    background: transparent;
+    border:none;
+  }
+  /* 修改行的背景色; */
+  .el-table tr{
+    background: transparent;
+  }
+  .el-table__fixed-right-patch {
+    background: transparent
+  }
+  /* 修改行内线的颜色 */
+  .el-table td,.building-top .el-table th.is-leaf {
+    padding: 11px 0;
+    border:none;
+    border-top:1px solid rgba(53,66,100,0.37);
+  }
+  /* 修改鼠标滑过和选中的样式 */
+  .el-table__body tr.hover-row.current-row>td,
+  .el-table__body tr.hover-row.el-table__row--striped.current-row>td,
+  .el-table__body tr.hover-row.el-table__row--striped>td,
+  .el-table__body tr.hover-row>td,
+  .el-table__body tr.current-row>td,
+  .el-table--enable-row-hover .el-table__body tr:hover>td {
+    background: #22283E;
+  }
+  .ivu-table-stripe .ivu-table-body tr:nth-child(2n):hover>td, .ivu-table-stripe .ivu-table-fixed-body tr:nth-child(2n):hover> td{
+    background: #22283E;
+  }
+  .ivu-table-stripe .ivu-table-body tr:nth-child(2n+1):hover>td, .ivu-table-stripe .ivu-table-fixed-body tr:nth-child(2n+1):hover> td{
+    background: #22283E;
+  }
+.el-scrollbar__wrap {
+  overflow-x: hidden !important;
+}
+.el-select-dropdown__list {
+  padding: 0px 0 12px 0;
+}
+.el-table td, .el-table th.is-leaf {
+  border-bottom: none;
+}
+
+  /* -------------------------------------------------修改form的样式------------------------------------------------- */
+  .el-form-item {
+    margin-bottom: 0;
+  }
+  /* 修改form的input样式 */
+  .el-form .el-input .el-input__inner {
+    background: transparent;
+    border-radius: 0;
+    height: 35px;
+    color: #fff;
+    font-size: 12px;
+  }
+  .el-form-item__label {
+    color: #fff;
+  }
+  .el-select-dropdown__item.selected {
+    color: #d8e2ff;
+    padding-bottom: 6px;
+    font-size: 12px;
+  }
+  .el-select:hover .el-input__inner {
+    color: #fff;
+  }
+  /* 修改textarea */
+  .el-textarea__inner {
+    background: transparent;
+    border-radius: 0;
+    border-color: #242A40;
+    min-height: 70px;
+    max-height: 80px;
+    color:#FFF;
+  }
+  .el-textarea__inner:hover{
+    border-color: #242A40;
+  }
+  .el-textarea__inner:focus{
+    border-color: #242A40 !important;
+  }
+  /* -------------------------------------------------修改下拉菜单的样式------------------------------------------------- */
+  .el-form .el-input .el-input__inner{
+    color: white;border: 1px solid #565e7d;padding: 4px 11px;height:26px;border-radius: 6px;background-color: #3d4866;
+  }
+  .el-select-dropdown {
+    border: 1px solid #565e7d;
+    border-radius: 6px;
+    background: #343b57;
+  }
+  /* 下拉菜单小箭头样式 */
+  .el-popper[x-placement^=bottom] .popper__arrow::after,
+  .el-popper[x-placement^=bottom] .popper__arrow {
+    border-bottom-color: #69ddf5;
+  }
+  .el-select-dropdown__item.hover, .el-select-dropdown__item:hover {
+    background: #262e43;
+    color: #d8e2ff;
+  }
+
+  /* 分页样式修改 */
+  .el-pagination__total,
+  .el-pagination__jump {
+    color: #fff;
+  }
+  .el-dialog, .el-pager li,
+  .el-pagination button,
+  .el-pagination .btn-next, .el-pagination .btn-prev {
+    background: transparent;
+    color: #409EFF
+  }
+  .el-pagination button:disabled {
+    background: transparent
+  }
+  .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu):after {
+    content: '';
+    display: block;
+    width: 3px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    background: #1E74F1;
+  }
+  .ivu-menu-vertical .ivu-menu-submenu .ivu-menu-item{
+    padding-left: 50px !important;
+  }
+  .ivu-menu-light.ivu-menu-vertical .ivu-menu-item-active:not(.ivu-menu-submenu){
+    background: #1D2437 !important;
+  }
+  /* -------------------------------------------------修改按钮样式------------------------------------------------- */
+  .el-button-style{
+    border-radius: 4px;border: none;
+  }
+  .el-button--primary {
+    color: #d6cece;
+    background-color: transparent;
+  }
+  .el-button--primary:focus, .el-button--primary:hover {
+    background-color: #ED4014;
+  }
+  .el-button {
+    border-radius: 0
+  }
+  .panelBox .el-radio {
+    color: #fff;
+    margin-right: 10px;
+  }
+  .el-radio__inner {
+    background: transparent;
+  }
+  .el-radio-button__inner {
+    border: none;
+    background-color: #343B57;
+    color: #A1ACC7;
+    height: 35px;
+  }
+  .el-radio-button__orig-radio:checked+.el-radio-button__inner {
+    background: #343B57;
+    border: none;
+    color: #A1ACC7;
+    height: 35px;
+  }
+  .el-radio-button:first-child .el-radio-button__inner,
+  .el-radio-button:last-child .el-radio-button__inner {
+    border-radius: 0;
+    border-left: none;
+  }
+ 
+
+  /* panelbox显示 */
+  .fade-enter-active, .fade-leave-active {
+    transition: all .8s ease;
+  }
+  .fade-enter, .fade-leave-to {
+    opacity: 0;
+    transform: translateX(-122px);
+  }
+
+  /*  */
+
+  .expand-enter-active, .expand-leave-active {
+    transition-property: 'opacity, width';
+    transition-duration: 1s;
+    transition-timing-function: linear;
+  }
+  .expand-enter, .expand-leave-to {
+    transform: rotateY(180deg);
+  }
+
+  /* -----------------------------------  iview自定义样式 --------------------------------- */
+  .ivu-modal-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .inPageModal .ivu-modal-mask,
+  .inPageModal .ivu-modal-wrap {
+    z-index: 10 !important;
+  }
+
+  .ivu-modal {
+    top: 0;
+  }
+
+  .mapView .ivu-tabs-bar {
+    margin-bottom: 0;
+    border-bottom: none !important;
+  }
+
+  .workResult .ivu-card-extra {
+    top: 10px
+  }
+  .operate-download {border-radius: 4px;background-color: #ED4014;border: none;}
+  #arrow:hover{
+    cursor:pointer;
+  }
+  .el-table--border::after, .el-table--group::after{
+    width: 0px;
+  }
+  .el-table::before{
+    height: 0px;
+  }
+  .ivu-menu-vertical.ivu-menu-light:after{
+    width: 0px;
+  }
+  .el-radio-button__orig-radio:checked+.el-radio-button__inner{
+    box-shadow: -1px 0 0 0 #343B57;
+  }
+  .ivu-tabs-nav-container{
+    position: absolute;
+    right: 3px;
+    background-color: #1D2336;
+  }
+  .ivu-dropdown .ivu-select-dropdown{
+    z-index: 1001;
+  }
+  .el-table__fixed-right::before, .el-table__fixed::before{
+    width: 0px;
+  }
+  .el-input__icon{
+    display: none;
+  }
+  .ivu-modal-body{
+    background-color: #1D2437;
+    border-radius: 4px;
+  }
+  .ivu-modal-confirm-head-title{
+    color: white;
+  }
+  .ivu-modal-header p, .ivu-modal-header-inner{
+    color: #B5C4D5;
+  }
+  .ivu-modal-content{
+    background: #1D2437;
+  }
+  .ivu-modal-header{
+    border-bottom: none;
+  }
+  .ivu-modal-footer{
+    border-top: none;
+  }
+  .ivu-input{
+    background-color: #3D4866;
+    border: none;
+    height: 24px;
+    color: white;
+    font-size: 12px;
+  }
+  .ivu-select-single .ivu-select-selection{
+    background-color: #3D4866;
+    border: none;
+    color: #ABB0BA;
+    height: 26px;
+  }
+  .tablePadding{
+    padding: 0px 20px;
+  }
+  ::-webkit-scrollbar{
+    width: 5px;/* 纵向滚动条*/
+    height: 5px;/* 横向滚动条 */
+    background-color: #2F3351;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0);
+    background-color: #6F7689;
+    border-radius: 4px;
+  }
+  .el-table--border th, .el-table__fixed-right-patch{
+    border-bottom: none;
+  }
+  .ivu-table{
+    background: none;
+  }
+  .ivu-table td{
+    background: none;
+  }
+  .ivu-table-border td, .ivu-table-border th{
+    border-right: none;
+  }
+  .ivu-table th{
+    background: none;
+  }
+  .ivu-table-stripe .ivu-table-body tr:nth-child(2n) td, .ivu-table-stripe .ivu-table-fixed-body tr:nth-child(2n) td{background: none;}
+  .ivu-table td, .ivu-table th{
+    border-bottom: 1px solid rgba(53,66,100,0.37);
+  }
+  .ivu-table-wrapper{
+    border: 1px solid rgba(53,66,100,0.37);
+  }
+  .ivu-dropdown-item{
+    color: #A5B3D0;
+  }
+  .ivu-select-dropdown{
+    background-color: #343B57;
+  }
+  .ivu-dropdown-item-divided:before{
+    background: none;
+  }
+  .ivu-dropdown-item-divided{
+    border-top: none;
+  }
+  .el-time-panel{
+    background-color: #1D2437;
+    border: 1px solid #3D4866;
+  }
+  .el-time-panel__footer{
+    border-top: 1px solid #3D4866;
+  }
+  .el-time-panel__content::after, .el-time-panel__content::before{
+    border-top: 1px solid #3D4866;
+    border-bottom: 1px solid #3D4866;
+  }
+  .ivu-form-item-content{
+    line-height: 0px;
+  }
+  .ivu-table-fixed-right::before, .ivu-table-fixed::before{
+    height: 0px;
+  }
+  .ivu-table:after{
+    width: 0px;
+  }
+  * {
+    box-sizing: content-box;
+  }
+  .ivu-table:before{
+    height: 0px;
+  }
+  .ivu-form-inline .ivu-form-item{
+    margin-right: 25px;
+  }
+  .ivu-btn-primary{
+    margin-right: 6px;
+  }
+  .ivu-form .ivu-form-item-label{
+    color: #b5c4e0;
+  }
+  .ivu-btn-primary.disabled, .ivu-btn-primary.disabled.active, .ivu-btn-primary.disabled:active, .ivu-btn-primary.disabled:focus, .ivu-btn-primary.disabled:hover, .ivu-btn-primary[disabled], .ivu-btn-primary[disabled].active, .ivu-btn-primary[disabled]:active, .ivu-btn-primary[disabled]:focus, .ivu-btn-primary[disabled]:hover, fieldset[disabled] .ivu-btn-primary, fieldset[disabled] .ivu-btn-primary.active, fieldset[disabled] .ivu-btn-primary:active, fieldset[disabled] .ivu-btn-primary:focus, fieldset[disabled] .ivu-btn-primary:hover{
+    background-color: #384361;
+    border-color: #384361;
+  }
+  .ivu-page-next, .ivu-page-prev,.ivu-page-item,.ivu-page-options-elevator input{
+    border: 1px solid #373E52;
+    background: none;
+  }
+  .ivu-table-fixed-right,.ivu-table-fixed, .ivu-table-fixed-right{
+    box-shadow: none;
+  }
+  .ivu-picker-confirm{
+    border-top: none;
+  }
+  .ivu-date-picker-header{
+    border-bottom: none;
+  }
+  .ivu-input-number-small input{
+    background-color: #3D4866;
+    color: white;
+    margin-top: 0px;
+  }
+  .ivu-select-small.ivu-select-multiple .ivu-select-selection{
+    background: #3D4866 !important;
+    border: none !important;
+  }
+  .ivu-btn-error.disabled, .ivu-btn-error.disabled.active, .ivu-btn-error.disabled:active, .ivu-btn-error.disabled:focus, .ivu-btn-error.disabled:hover, .ivu-btn-error[disabled], .ivu-btn-error[disabled].active, .ivu-btn-error[disabled]:active, .ivu-btn-error[disabled]:focus, .ivu-btn-error[disabled]:hover, fieldset[disabled] .ivu-btn-error, fieldset[disabled] .ivu-btn-error.active, fieldset[disabled] .ivu-btn-error:active, fieldset[disabled] .ivu-btn-error:focus, fieldset[disabled] .ivu-btn-error:hover{
+    background-color: #ED4014;
+    border-color: #ED4014;
+  }
+  .ivu-input-number-disabled{
+    background-color: #3D4866;
+  }
+  .ivu-input[disabled], fieldset[disabled] .ivu-input{
+    background-color: #3D4866;
+    color: white;
+  }
+  .ivu-btn-info{
+    background-color: #2D8CF0;
+    border-color: #2D8CF0;
+  }
+  .view-c[data-v-4bc9d7de]{
+    background: #1D2437 !important;
+  }
+  .ivu-table-stripe .ivu-table-body tr:nth-child(2n+1) td, .ivu-table-stripe .ivu-table-fixed-body tr:nth-child(2n+1) td{
+    background: #1D2437;
+  }
+  .ivu-select-small.ivu-select-multiple .ivu-tag{
+    background: #BFC2CB;
+    border: none;
+  }
+  .ivu-radio-group-button .ivu-radio-wrapper-checked{
+    background: #2d8cf0;
+    color: #fff;
+  }
+  .ivu-radio-group-button .ivu-radio-wrapper{
+    background: #2d8cf0;
+    color: #fff;
+    border: none;
+  }
+  .ivu-radio-group-button .ivu-radio-wrapper:first-child{
+    border-radius: 4px;
+  }
+  .ivu-radio-group-button .ivu-radio-wrapper:last-child{
+    border-radius: 4px;
+  }
+  .ivu-radio-group-button .ivu-radio-wrapper:after, .ivu-radio-group-button .ivu-radio-wrapper:before{
+    width: 0px;
+  }
+  .ivu-radio-group-button.ivu-radio-group-large .ivu-radio-wrapper{
+    border-radius: 4px;
+  }
+  .ivu-table table{
+    color: #FFF;
+    font-size: 14px;
+  }
+  .ivu-btn.disabled, .ivu-btn.disabled.active, .ivu-btn.disabled:active, .ivu-btn.disabled:focus, .ivu-btn.disabled:hover, .ivu-btn[disabled], .ivu-btn[disabled].active, .ivu-btn[disabled]:active, .ivu-btn[disabled]:focus, .ivu-btn[disabled]:hover, fieldset[disabled] .ivu-btn, fieldset[disabled] .ivu-btn.active, fieldset[disabled] .ivu-btn:active, fieldset[disabled] .ivu-btn:focus, fieldset[disabled] .ivu-btn:hover{
+    background-color: #384461;
+    border-color: #384461;
+  }
+  .ivu-checkbox-inner{
+    border: 1px solid #3D4866;
+    background-color: #3D4866;
+  }
+  .ivu-input-number-input{
+    background: #3D4866;
+    color: white;
+    height: 24px;
+    line-height: 24px;
+  }
+  .ivu-select-selection{
+    background: #3D4866;
+  }
+  .ivu-tag{
+    background: #BFC2CB;
+  }
+  .ivu-select-single .ivu-select-selection .ivu-select-placeholder, .ivu-select-single .ivu-select-selection .ivu-select-selected-value{
+    color: white;
+  }
+  .ivu-input-number{
+    border: none;
+    height: 24px;
+    background-color: #3D4866;
+    line-height: 22px;
+  }
+  .ivu-select-selection{
+    border: none;
+  }
+  .el-form--inline .el-form-item{
+    margin-right: 3px;
+  }
+  .ivu-table-fixed-right, .ivu-table-fixed, .ivu-table-fixed-right{
+    background: #1D2437;
+    height: 100%;
+    overflow: hidden;
+  }
+  .ivu-page-options-elevator input{
+    height: 19px;
+  }
+  .ivu-table-fixed-right-header{
+    width: 0px !important;
+  }
+  .el-select-dropdown__item{
+    color: #939cb6;
+    font-size: 12px;
+
+  }
+  .el-popper[x-placement^=bottom] .popper__arrow::after, .el-popper[x-placement^=bottom] .popper__arrow{
+    display: none;
+  }
+  .el-popper[x-placement^=bottom]{
+    margin-top: 0px;
+  }
+  .ivu-checkbox-disabled .ivu-checkbox-inner{
+    background-color: #5F6578;
+    border: 1px solid #5F6578;
+  }
+  .ivu-table-stripe .ivu-table-body tr:last-child td, .ivu-table-stripe .ivu-table-fixed-body tr:last-child td{
+    border-bottom: none;
+  }
+  .ivu-select-item:hover{
+    background: #262e43;
+    color: #d8e2ff;
+  }
+  .ivu-select-item{
+    color: #939cb6;
+    font-size: 12px;
+  }
+  .ivu-dropdown-item:hover{
+    background: #262e43;
+    color: #d8e2ff;
+  }
+  .ivu-select-small.ivu-select-single .ivu-select-selection{
+    height: 24px;
+  }
+  .ivu-select-item-focus,.ivu-select-multiple .ivu-select-item-selected,.ivu-select-multiple .ivu-select-item-focus, .ivu-select-multiple .ivu-select-item-selected:hover{
+    background: #262e43;
+  }
+  .ivu-radio-inner:after{
+    top: 3px;
+    left: 3px;
+  }
+  .ivu-card-body{
+    padding-bottom: 56px;
+  }
+  .workResultPhone .ivu-input{
+    background-color: #FFFFFF !important;
+    border: 1px solid #E5E5E5 !important;
+    color: #171717;
+ }
+  .workResultPhone .ivu-dropdown-item-divided{
+    margin-top: 0px;
+  }
+  .workResultPhone .ivu-select-dropdown{
+    background: #FFF;
+  }
+  .buttonSubmit .ivu-input{
+    padding: 13px 43px 13px;
+    border-radius: 32px;
+  }
+  .login-vue .ivu-icon{
+    margin: 9px 10px 0px 19px;
+  }
+  .buttonSubmit .ivu-btn-primary{
+    background-color: #16182A;
+    border-color: #16182A;
+  }
+  .buttonSubmit .ivu-btn{
+    padding: 10px 15px 10px;
+    font-size: 21px;
+    border-radius: 25px;
+  }
+  .buttonSubmits .ivu-btn-primary{
+    background-color: #16182A;
+    border-color: #16182A;
+  }
+  .buttonSubmits .ivu-btn{
+    padding: 10px 15px 10px;
+    font-size: 21px;
+    border-radius: 25px;
+  }
+  .buttonSubmitss .ivu-btn-primary{
+    background-color: #2F80F6;
+    border-color: #2F80F6;
+  }
+  .buttonSubmitss .ivu-btn{
+    padding: 10px 15px 10px;
+    font-size: 21px;
+    border-radius: 25px;
+  }
+  .passWordModefy .ivu-btn{
+    background-color: #2F80F6;
+    border-color: #2F80F6;
+    color: #FFF;
+  }
+  .addButton .el-button{
+    margin-top: 8px !important;
+    padding: 7px 14px;
+  }
+  .el-time-spinner__item.active:not(.disabled){
+    color: #FFF;
+  }
+  .InsertPhone .ivu-modal-content,.InsertPhone .ivu-modal-body{
+    background: white;
+  }
+  .InsertPhone .ivu-select-single .ivu-select-selection .ivu-select-placeholder, .ivu-select-single .ivu-select-selection .ivu-select-selected-value{
+    color: black;
+  }
+  .InsertPhone .ivu-form .ivu-form-item-label,.InsertPhone .ivu-modal-header p, .ivu-modal-header-inner{
+    color: black;
+  }
+  .InsertPhone .ivu-modal-header-inner{
+    color: black;
+  }
+  .InsertPhoneInput .ivu-select-single .ivu-select-selection{
+    background: #FFF;
+    border: 1px solid #C8CBD1;
+    color: black;
+  }
+  .InsertPhoneInput span.ivu-select-selected-value{
+    color: black !important;
+  }
+  .InsertPhoneInputs .ivu-input[disabled], fieldset[disabled] .ivu-input{
+    background-color: #FFF;
+    border: 1px solid #C8CBD1;
+    color: black;
+  }
+  .InsertPhoneInputs .ivu-select-selection{
+    background-color: #FFF;
+    border: 1px solid #C8CBD1;
+    color: black;
+  }
+  .InsertPhoneInputss .ivu-input[disabled], fieldset[disabled] .ivu-input{
+    background-color: #FFF;
+    color: black;
+    border: 1px solid #C8CBD1;
+    height: 30px;
+  }
+  .InsertPhoneInputs .ivu-input-number-small input{
+    background-color: #FFF;
+    border: 1px solid #C8CBD1;
+    color: black;
+  }
+   .ivu-form-item-error-tip{
+    left: 0px;
+  }
+  .ivu-btn.disabled, .ivu-btn.disabled.active, .ivu-btn.disabled:active, .ivu-btn.disabled:focus, .ivu-btn.disabled:hover, .ivu-btn[disabled], .ivu-btn[disabled].active, .ivu-btn[disabled]:active, .ivu-btn[disabled]:focus, .ivu-btn[disabled]:hover, fieldset[disabled] .ivu-btn, fieldset[disabled] .ivu-btn.active, fieldset[disabled] .ivu-btn:active, fieldset[disabled] .ivu-btn:focus, fieldset[disabled] .ivu-btn:hover{
+    background-color: #384461 !important;
+  }
+  .reset .ivu-btn-primary{
+    background-color: #1D2437;
+    border-color: #505561;
+  }
+  .ivu-form .ivu-form-item-label, .InsertPhone .ivu-modal-header p, .InsertPhone .ivu-select-single .ivu-select-selection .ivu-select-placeholder, .ivu-modal-header-inner, .ivu-select-single .ivu-select-selection .ivu-select-selected-value{
+    color: white;
+  }
+  .InsertPhoneInputs .ivu-form .ivu-form-item-label, .InsertPhone .ivu-modal-header p, .InsertPhone .ivu-select-single .ivu-select-selection .ivu-select-placeholder, .ivu-modal-header-inner, .ivu-select-single .ivu-select-selection .ivu-select-selected-value{
+    color: #C5C8CE;
+  }
+  .ivu-input-number-input[disabled]{
+    color: #B5C4D8;
+  }
+  .ivu-input-icon-normal+.ivu-input{
+    padding-right: 0px;
+  }
+  .addWorkResultPhone .ivu-modal-content,.addWorkResultPhone .ivu-modal-body{
+    background: #FFF;
+    color: black;
+  }
+  .addWorkResultPhone .ivu-select-single .ivu-select-selection{
+    background: #FFF;
+    border: 1px solid #B5C4D8;
+    color: black;
+  }
+  .addWorkResultPhone .ivu-input-number-input{
+    background: #FFF;
+    border: 1px solid #B5C4D8;
+    color: black;
+  }
+  .addWorkResultPhone .ivu-select-selection{
+    background: #FFF;
+    border: 1px solid #B5C4D8;
+    color: black;
+  }
+  .addWorkResultPhone .ivu-input{
+    background: #FFF;
+    border: 1px solid #B5C4D8;
+    color: black;
+  }
+  .addWorkResultPhone .ivu-select-dropdown,.ivu-select-item-focus,.addWorkResultPhone .ivu-select-multiple .ivu-select-item-selected, .ivu-select-multiple .ivu-select-item-focus, .ivu-select-multiple .ivu-select-item-selected:hover{
+    background: #FFF;
+  }
+  .InsertPhone .ivu-select-dropdown{
+    background: #FFF;
+  }
+  .InsertPhone .ivu-select-item-focus, .ivu-select-multiple .ivu-select-item-selected, .ivu-select-multiple .ivu-select-item-focus, .ivu-select-multiple .ivu-select-item-selected:hover{
+    background: #B5C4D8;
+  }
+  .addWorkResultPhone .ivu-modal-header-inner{
+    color: black;
+  }
+  .addWorkResultPhone span.ivu-select-selected-value{
+    color: black;
+  }
+  .addWorkResultPhone label.ivu-form-item-label {
+    color: black !important;
+  }
+  .addWorkResultPhone span.ivu-select-selected-value {
+    color: black !important;
+  }
+  .el-picker-panel{
+    background: #1D2437;
+  }
+  .el-picker-panel__footer{
+    background-color: #1D2437;
+  }
+  .datePicker .el-input__inner{
+    background-color: #1D2437;
+  }
+  .ivu-table-cell{
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .ivu-scroll-container{
+    overflow: auto;
+  }
+  .ivu-table-fixed-body{
+    height: 100% !important;
+  }
+  .ivu-select-multiple .ivu-select-selection .ivu-select-placeholder{
+    color: white;
+  }
+  .ivu-spin-fix{
+    top: -15px !important;
+  }
